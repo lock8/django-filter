@@ -90,11 +90,6 @@ class CharFilter(Filter):
 class BooleanFilter(Filter):
     field_class = forms.NullBooleanField
 
-    def filter(self, qs, value):
-        if value is not None:
-            return qs.filter(**{self.name: value})
-        return qs
-
 
 class ChoiceFilter(Filter):
     field_class = forms.ChoiceField
